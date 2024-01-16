@@ -93,3 +93,13 @@ docker run -it \
 --name pgadmin \
 dpage/pgadmin4
 ```
+
+***Use the following command to start exited container***
+
+```bash
+docker start pg-database && docker attach pg-database
+```
+
+```bash
+docker start pgadmin && docker attach pgadmin
+```
