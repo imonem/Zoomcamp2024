@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
+"""Module providing data ingestion functions from a parquet file to postgres
+-- taxi data zoomcamp2024"""
 
 import os
 import argparse
@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 
 
 def main(params):
+    """main function"""
     user = params.user
     password = params.password
     host = params.host
