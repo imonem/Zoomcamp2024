@@ -3,6 +3,10 @@
 ## To setup docker + postgres
 
 ```bash
+docker pull postgres
+```
+
+```bash
 docker run -it \
 -e POSTGRES_USER="root" \
 -e POSTGRES_PASSWORD="root" \
@@ -52,7 +56,7 @@ wget https://www.nyc.gov/assets/tlc/downloads/pdf/working_parquet_format.pdf
 docker pull dpage/pgadmin4
 ```
 
-### To run [pgadmin](https://hub.docker.com/r/dpage/pgadmin4/) in docker use the following command
+### To run [pgadmin](https://hub.docker.com/r/dpage/pgadmin4/) in docker, use the following command
 
 ```bash
 docker run -it \
@@ -206,3 +210,5 @@ docker run -it \
 ```--host=localhost``` is changed to ```--host=pg-database``` which is the database instance.
 
 The third line is the image name followed by the parameters
+
+### Docker compose
