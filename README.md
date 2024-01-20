@@ -156,10 +156,8 @@ After successfully running the above, we test using pgadmin instance on browser
 We run a count query such as the below
 
 ```sql
-SELECT
-	COUNT(1)
-FROM
-	yellow_taxi_data
+SELECT COUNT(1)
+FROM yellow_taxi_data
 ```
 
 which *assuming we used the above URL* returns ```449063```
@@ -241,4 +239,3 @@ I downloaded the terrform for windows from Hashicorp
 - Create a ```main.tf``` file with Google as the cloud provider *```terraform fmt``` will prettify the code after saving the file.*
 - Link the credentials `keys` json file
 - From the terminal in the main project folder, run ```terraform init```
-
