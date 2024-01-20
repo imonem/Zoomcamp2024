@@ -212,3 +212,33 @@ docker run -it \
 The third line is the image name followed by the parameters
 
 ### Docker compose
+
+Adding docker compose is pretty straight forward, one thing that is missing is transferring the configuration from existing images
+to docker-compose.yaml, I had to reconfigure the pgadmin to connect to the pgdatabase, lost all saved queries in the process
+
+## SQL Refresher
+
+[Zoomcamp Youtube refresher](https://www.youtube.com/watch?v=QEcps_iskgg&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=10) is inspiring 😁
+
+## Terraform
+
+### Terraform Primer
+
+I downloaded the terrform for windows from Hashicorp
+
+***The 4 basic commands are ```Init```, ```Apply```, ```Plan``` and ```Destroy```***
+
+### Terraform Basics
+
+- Register at [GCP](https://console.cloud.google.com) then select IAM & Admin -> Service Accounts
+- Register a new service account with the following services
+  - BigQuery
+  - Compute
+  - Storage
+- Get key as json file
+- Create a folder for the project
+- Create a sub-folder for the key
+- Create a ```main.tf``` file with Google as the cloud provider *```terraform fmt``` will prettify the code after saving the file.*
+- Link the credentials `keys` json file
+- From the terminal in the main project folder, run ```terraform init```
+
