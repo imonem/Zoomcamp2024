@@ -226,7 +226,7 @@ I downloaded the terrform for windows from Hashicorp
 
 ***The 4 basic commands are ```Init```, ```Apply```, ```Plan``` and ```Destroy```***
 
-### Terraform Basics
+### Terraform Basics using [this video](https://www.youtube.com/watch?v=s2bOYDCKl_M&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=11&pp=iAQB) as a guide
 
 - Register at [GCP](https://console.cloud.google.com) then select IAM & Admin -> Service Accounts
 - Register a new service account with the following services
@@ -239,3 +239,5 @@ I downloaded the terrform for windows from Hashicorp
 - Create a ```main.tf``` file with Google as the cloud provider *```terraform fmt``` will prettify the code after saving the file.*
 - Link the credentials `keys` json file
 - From the terminal in the main project folder, run ```terraform init```
+
+### The rest of the guide will be continued [here](./gcp.md) for the of separation of concerns 😁
