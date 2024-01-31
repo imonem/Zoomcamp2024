@@ -16,13 +16,30 @@ What is version of the package wheel ?
 
 How many taxi trips were totally made on September 18th 2019?
 
-- 15612
+- 15767
+
+#### Query used to reach the answer
+
+```SQL
+SELECT COUNT(INDEX)
+FROM GREEN_TAXI_DATA
+WHERE DATE(LPEP_PICKUP_DATETIME) = '2019-09-18'
+```
 
 ### Question 4. Largest trip for each day
 
 Which was the pick up day with the largest trip distance Use the pick up time for your calculations.
 
 - 2019-09-26
+
+#### Query used to reach the answer
+
+```SQL
+SELECT DATE(Y.LPEP_PICKUP_DATETIME)
+FROM GREEN_TAXI_DATA Y
+ORDER BY TRIP_DISTANCE DESC
+LIMIT 1
+```
 
 ### Question 5. Three biggest pick up Boroughs
 
@@ -32,6 +49,20 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
 
 - "Brooklyn" "Manhattan" "Queens"
 
+#### Query used to reach the answer
+
+```SQL
+SELECT ZP."Borough",
+	SUM(TOTAL_AMOUNT)
+FROM GREEN_TAXI_DATA AS Y
+INNER JOIN TAXI_ZONE_LOOKUP AS ZP ON Y."PULocationID" = ZP."LocationID"
+INNER JOIN TAXI_ZONE_LOOKUP AS ZD ON Y."DOLocationID" = ZD."LocationID"
+WHERE DATE(Y.LPEP_PICKUP_DATETIME) = '2019-09-18'
+GROUP BY ZP."Borough"
+ORDER BY SUM(TOTAL_AMOUNT) DESC
+LIMIT 3
+```
+
 ### Question 6. Largest tip
 
 For the passengers picked up in September 2019 in the zone name Astoria which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
@@ -39,6 +70,21 @@ For the passengers picked up in September 2019 in the zone name Astoria which wa
 Note: it's not a typo, it's ```tip``` , not ```trip```
 
 - JFK Airport
+
+#### Query used to reach the answer
+
+```SQL
+SELECT ZP."Zone" AS PZONE,
+	ZD."Zone" AS DZONE,
+	MAX(TIP_AMOUNT) AS TIP
+FROM GREEN_TAXI_DATA AS Y
+INNER JOIN TAXI_ZONE_LOOKUP AS ZP ON Y."PULocationID" = ZP."LocationID"
+INNER JOIN TAXI_ZONE_LOOKUP AS ZD ON Y."DOLocationID" = ZD."LocationID"
+WHERE ZP."Zone" = 'Astoria'
+GROUP BY DZONE,
+	PZONE
+ORDER BY TIP DESC
+```
 
 ## Terraform
 
