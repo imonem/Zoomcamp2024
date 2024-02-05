@@ -250,3 +250,5 @@ How many columns need to be renamed to snake case?
 Once exported, how many partitions (folders) are present in Google Cloud?
 
 - 96
+
+[Mage code](https://github.com/imonem/Zoomcamp2024/tree/master/green_taxi_etl)
