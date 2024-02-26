@@ -1,4 +1,4 @@
-## Module 4 Homework
+# Module 4 Homework
 
 In this homework, we'll use the models developed during the week 4 videos and enhance the already presented dbt project using the already loaded Taxi data for fhv vehicles for year 2019 in our DWH.
 
@@ -29,11 +29,7 @@ You'll need to have completed the ["Build the first dbt models"](https://www.you
 
 **What is the code that our CI job will run? Where is this code coming from?**
 
-* *The code that has been merged into the main branch
-* *The code that is behind the creation object on the dbt_cloud_pr_ schema
-* *The code from any development branch that has been opened based on main
-* *The code from the development branch we are requesting to merge to main
-
+* The code that is behind the creation object on the dbt_cloud_pr_ schema
 
 ### Question 3 (2 points)
 
